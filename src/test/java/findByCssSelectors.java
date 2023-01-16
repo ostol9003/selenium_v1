@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-
 public class findByCssSelectors {
 
 //    @Test
@@ -29,7 +28,7 @@ public class findByCssSelectors {
 //    }
 
     @Test
-    public void Css2(){
+    public void Css2() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
 
@@ -43,6 +42,12 @@ public class findByCssSelectors {
         WebElement firstFormAfterLabel = driver.findElement(By.cssSelector("label + form"));
         List<WebElement> allFormsAfterLabel = driver.findElements(By.cssSelector("label ~ form"));
         System.out.println(allFormsAfterLabel.size());
+
+
+        WebElement byAttrTag = driver.findElement(By.cssSelector("input[name='fname']"));
+        WebElement byAttrContains = driver.findElement(By.cssSelector("input[name*='nam']"));
+        WebElement byAttrStarts = driver.findElement(By.cssSelector("input[name^='f']"));
+        WebElement byAttrEnds = driver.findElement(By.cssSelector("input[name$='me']"));
 
 
         driver.close();

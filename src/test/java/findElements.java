@@ -10,7 +10,7 @@ public class findElements {
 
 
     @Test
-    public void FindElements(){
+    public void FindElements() {
         WebDriver driver = new SafariDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
 
@@ -37,7 +37,7 @@ public class findElements {
         input.sendKeys("first");
 
 
-        List<WebElement> inputs  = driver.findElements(By.tagName("input"));
+        List<WebElement> inputs = driver.findElements(By.tagName("input"));
         System.out.println(inputs.size());
 
         // link text
@@ -45,10 +45,5 @@ public class findElements {
         WebElement linkText = driver.findElement(By.linkText("Visit W3Schools.com!"));
         WebElement linkText2 = driver.findElement(By.partialLinkText("Visit W3Schools"));
         //linkText.click();
-
-        // find by css
-
-
-
     }
 }
