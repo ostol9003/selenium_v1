@@ -91,6 +91,6 @@ public class findByCssSelectors {
         driver.findElement(attrContains);
         driver.findElement(attrStarts);
         driver.findElement(attrEnds);
-        //driver.close();
+        driver.close();
     }
 }
