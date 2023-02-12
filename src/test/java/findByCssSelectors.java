@@ -77,20 +77,35 @@ public class findByCssSelectors {
 //        driver.close();
 //    }
 
+//    @Test
+//    public void Css3() {
+//        WebDriver driver = new ChromeDriver();
+//        driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
+//
+//        By attrTag = By.cssSelector("input[name = 'fname']");
+//        By attrContains = By.cssSelector("input[name*='ame']");
+//        By attrStarts = By.cssSelector("input[name^='f']");
+//        By attrEnds = By.cssSelector("input[name$='name']");
+//
+//        driver.findElement(attrTag);
+//        driver.findElement(attrContains);
+//        driver.findElement(attrStarts);
+//        driver.findElement(attrEnds);
+//        driver.close();
+//    }
     @Test
-    public void Css3() {
+    public void Css4() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
 
-        By attrTag = By.cssSelector("input[name = 'fname']");
-        By attrContains = By.cssSelector("input[name*='ame']");
-        By attrStarts = By.cssSelector("input[name^='f']");
-        By attrEnds = By.cssSelector("input[name$='name']");
+        By firstChild = By.cssSelector("li:first-child");
+        By lastChild = By.cssSelector("li:last-child");
+        By thirdChild = By.cssSelector("li:nth-child(3)");
 
-        driver.findElement(attrTag);
-        driver.findElement(attrContains);
-        driver.findElement(attrStarts);
-        driver.findElement(attrEnds);
+        driver.findElement(firstChild);
+        driver.findElement(lastChild);
+        driver.findElement(thirdChild);
+
         driver.close();
     }
 }
