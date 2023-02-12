@@ -8,6 +8,7 @@ import java.util.List;
 
 public class findByCssSelectors {
 
+
 //    @Test
 //    public void findElementsByCss(){
 //        WebDriver driver = new ChromeDriver();
@@ -27,30 +28,62 @@ public class findByCssSelectors {
 //        driver.quit();
 //    }
 
+//    @Test
+//    public void Css2() {
+//        WebDriver driver = new ChromeDriver();
+//        driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
+//
+////        WebElement trInTable = driver.findElement(By.cssSelector("table tr"));
+////        WebElement ulInDiv = driver.findElement(By.cssSelector("div ul"));
+////        WebElement trInTbody = driver.findElement(By.cssSelector("tbody tr"));
+////
+////        WebElement firstChildUlInDiv = driver.findElement(By.cssSelector("div > ul"));
+////        WebElement firstChildTrInTbody = driver.findElement(By.cssSelector("tbody > tr"));
+////
+////        WebElement firstFormAfterLabel = driver.findElement(By.cssSelector("label + form"));
+////        List<WebElement> allFormsAfterLabel = driver.findElements(By.cssSelector("label ~ form"));
+////        System.out.println(allFormsAfterLabel.size());
+////
+////
+////        WebElement byAttrTag = driver.findElement(By.cssSelector("input[name='fname']"));
+////        WebElement byAttrContains = driver.findElement(By.cssSelector("input[name*='nam']"));
+////        WebElement byAttrStarts = driver.findElement(By.cssSelector("input[name^='f']"));
+////        WebElement byAttrEnds = driver.findElement(By.cssSelector("input[name$='me']"));
+//
+//
+//        By all = By.cssSelector("*");
+//        driver.findElements(all);
+//
+//        By ulInsideDiv = By.cssSelector("div ul");
+//        By trInTable = By.cssSelector("table tr");
+//        By trInBody = By.cssSelector("tbody tr");
+//
+//        driver.findElement(ulInsideDiv);
+//        driver.findElement(trInTable);
+//        driver.findElement(trInBody);
+//
+//        By firstChildUlInDiv = By.cssSelector("div > ul");
+//        By firstChildTrInTbody = By.cssSelector("tbody > tr");
+//
+//        driver.findElement(firstChildTrInTbody);
+//        driver.findElement(firstChildUlInDiv);
+//
+//        By firstFormAfterLabel = By.cssSelector("label + form");
+//        By allFormsAfterLabel = By.cssSelector("label ~ form");
+//
+//        driver.findElements(allFormsAfterLabel);
+//        driver.findElements(firstFormAfterLabel);
+//
+//        driver.close();
+//    }
+
     @Test
-    public void Css2() {
+    public void Css3() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
 
-        WebElement trInTable = driver.findElement(By.cssSelector("table tr"));
-        WebElement ulInDiv = driver.findElement(By.cssSelector("div ul"));
-        WebElement trInTbody = driver.findElement(By.cssSelector("tbody tr"));
-
-        WebElement firstChildUlInDiv = driver.findElement(By.cssSelector("div > ul"));
-        WebElement firstChildTrInTbody = driver.findElement(By.cssSelector("tbody > tr"));
-
-        WebElement firstFormAfterLabel = driver.findElement(By.cssSelector("label + form"));
-        List<WebElement> allFormsAfterLabel = driver.findElements(By.cssSelector("label ~ form"));
-        System.out.println(allFormsAfterLabel.size());
-
-
-        WebElement byAttrTag = driver.findElement(By.cssSelector("input[name='fname']"));
-        WebElement byAttrContains = driver.findElement(By.cssSelector("input[name*='nam']"));
-        WebElement byAttrStarts = driver.findElement(By.cssSelector("input[name^='f']"));
-        WebElement byAttrEnds = driver.findElement(By.cssSelector("input[name$='me']"));
 
 
         driver.close();
-
     }
 }
