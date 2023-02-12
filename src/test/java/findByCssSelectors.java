@@ -82,8 +82,15 @@ public class findByCssSelectors {
         WebDriver driver = new ChromeDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/basics.html");
 
+        By attrTag = By.cssSelector("input[name = 'fname']");
+        By attrContains = By.cssSelector("input[name*='ame']");
+        By attrStarts = By.cssSelector("input[name^='f']");
+        By attrEnds = By.cssSelector("input[name$='name']");
 
-
-        driver.close();
+        driver.findElement(attrTag);
+        driver.findElement(attrContains);
+        driver.findElement(attrStarts);
+        driver.findElement(attrEnds);
+        //driver.close();
     }
 }
