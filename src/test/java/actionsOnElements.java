@@ -32,6 +32,7 @@ public class actionsOnElements {
         WebElement usernameInput = driver.findElement(By.name("username"));
         usernameInput.clear();
         usernameInput.sendKeys("admin");
+        System.out.println(usernameInput.getAttribute("value"));
 
         WebElement passwordInput = driver.findElement(By.name("password"));
         passwordInput.clear();
