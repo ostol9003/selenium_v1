@@ -1,8 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -37,11 +34,15 @@ public class actionsOnElements {
         WebElement passwordInput = driver.findElement(By.name("password"));
         passwordInput.clear();
         passwordInput.sendKeys("password");
-        //passwordInput.sendKeys(Keys.ENTER);
+        // Alerts
+        passwordInput.sendKeys(Keys.ENTER);
+        driver.switchTo().alert().accept(); // first
+        driver.switchTo().alert().accept(); // second
+
+
 
         driver.findElement(By.cssSelector("[type='checkbox']")).click();
         driver.findElement(By.cssSelector("[value='male']")).click();
-
         //driver.findElement(By.cssSelector("[value='saab']")).click();
         WebElement selectCar = driver.findElement(By.cssSelector("select"));
         Select cars = new Select(selectCar);
@@ -55,6 +56,15 @@ public class actionsOnElements {
 //        }
         System.out.println(homework(options,"Saab"));
         System.out.println(homework(options,"Fiat"));
+
+        // Read hidden element
+
+        WebElement para = driver.findElement(By.cssSelector(".topSecret"));
+        System.out.println("By text: " + para.getText());
+        System.out.println("By attr value: " + para.getAttribute("value"));
+        System.out.println("By attr text content: " + para.getAttribute("innerText")); // textContent insted of
+
+
 
         driver.close();
 
