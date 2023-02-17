@@ -22,7 +22,7 @@ public class FirstTest extends BaseTest {
 
     @Test //@Ignore
     public void firstTest() {
-        driver = new SafariDriver();
+        driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
         driver.get("https://testeroprogramowania.github.io/selenium/wait2.html");
 
@@ -39,7 +39,7 @@ public class FirstTest extends BaseTest {
         Assert.assertTrue(para.getText().startsWith("Dopiero"));
         Assert.assertFalse(para.getText().endsWith("Dopiero"));
         Assert.assertEquals(paraText, "Dopiero się pojawiłem!");
-//        Assert.assertEquals(paraText, "Dopiero","Teksty sa rozne");
+        Assert.assertEquals(paraText, "Dopiero","Teksty sa rozne");
 
 
         driver.quit();

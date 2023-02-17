@@ -1,8 +1,16 @@
 package pl.testeroprogramowania;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.File;
+import java.io.IOException;
 
 public class SampleTestListener implements ITestListener {
     @Override
@@ -17,7 +25,22 @@ public class SampleTestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("I am taking screenshot");
+//        System.out.println("I am taking screenshot");
+        WebDriver driver = DriverFactory.getDriver();
+        int randomNumber = (int) (Math.random()*1000);
+        String failImg = "TestFail" + randomNumber + ".png";
+
+        // Screenshot
+        TakesScreenshot screenShoot = (TakesScreenshot) driver;
+        File srcFile = screenShoot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(srcFile,new File("src/test/resources/"+failImg));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
     }
 
     @Override
